@@ -14,6 +14,7 @@ const direccion = path.join(__dirname, nombreArchivo)
 
 const tabla = tablaMultiplicar(base)
 const titulo = colors.bgCyan(`Tabla del ${base}\n`)
+
 console.log(titulo, tabla)
 
 crearArchivo(direccion, tabla)
