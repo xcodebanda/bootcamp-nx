@@ -1,5 +1,5 @@
-const { mostrarMenu } = require('./helpers/mensajes')
-const { pausa } = require('./helpers/pausa')
+const { mostrarMenu } = require('./helpers/inquirer')
+const { newPausa } = require('./helpers/pausa')
 
 const main = async () => {
   let opcion = ''
@@ -7,10 +7,8 @@ const main = async () => {
     opcion = await mostrarMenu()
     console.log(opcion)
 
-    if (opcion !== '0') {
-      await pausa()
-    }
-  } while (opcion !== '0')
+    if (opcion !== 0) await newPausa()
+  } while (opcion !== 0)
 }
 
 main()
