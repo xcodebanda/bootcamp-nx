@@ -1,6 +1,6 @@
 const { mostrarMenu } = require('./helpers/inquirer')
-const Tarea = require('./helpers/models/tarea')
-const Tareas = require('./helpers/models/tareas')
+const Tarea = require('./models/tarea')
+const Tareas = require('./models/tareas')
 const { newPausa } = require('./helpers/pausa')
 
 const main = async () => {
