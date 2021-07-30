@@ -12,7 +12,7 @@ class Tareas {
         console.log('Tarea creada!')
     }
 
-    get listaTareas() {
+    get listaMostrarTareas() {
         const tareas = []
 
         Object.keys(this._listado).forEach((item, index) => {
@@ -23,6 +23,16 @@ class Tareas {
                 ? colors.green(`${completadoEn}`)
                 : colors.red('Sin completar')
             tareas.push(`\n${num} ${desc} ${separador} ${completado}`)
+        })
+
+        return tareas
+    }
+
+    get listaGuardarTareas() {
+        const tareas = []
+
+        Object.keys(this._listado).forEach((item) => {
+            tareas.push(this._listado[item])
         })
 
         return tareas

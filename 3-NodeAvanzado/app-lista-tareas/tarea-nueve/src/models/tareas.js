@@ -6,13 +6,17 @@ class Tareas {
         this._listado = {}
     }
 
+    cargarTareas(tareas) {
+        this._listado = tareas
+    }
+
     crearTarea(desc = '') {
         const tarea = new Tarea(desc)
         this._listado[tarea.id] = tarea
         console.log('Tarea creada!')
     }
 
-    get listaTareas() {
+    get listaMostrarTareas() {
         const tareas = []
 
         Object.keys(this._listado).forEach((item, index) => {
@@ -26,6 +30,10 @@ class Tareas {
         })
 
         return tareas
+    }
+
+    get listaGuardarTareas() {
+        return this._listado
     }
 }
 
