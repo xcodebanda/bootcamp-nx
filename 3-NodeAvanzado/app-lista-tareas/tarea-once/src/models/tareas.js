@@ -32,6 +32,31 @@ class Tareas {
         return tareas
     }
 
+    listarPendientesCompletadas(completadas=true) {
+        const tareas = []
+        let counter = 1
+        Object.keys(this._listado).forEach((item, index) => {
+            const { desc, completadoEn } = this._listado[item]
+            const separador = colors.yellow('=>')
+            const num = colors.rainbow(`${counter}:`) 
+            const completado = completadoEn
+                ? colors.green(`${completadoEn}`)
+                : colors.red('Sin completar')
+            if(completadas) {
+                if(completadoEn) {
+                    tareas.push(`\n${num} ${desc} ${separador} ${completado}`)
+                    counter += 1
+                }
+            } else {
+                if(!completadoEn) {
+                    tareas.push(`\n${num} ${desc} ${separador} ${completado}`)
+                    counter += 1
+                }
+            }
+        })
+        return tareas
+    }
+
     get listaGuardarTareas() {
         return this._listado
     }
